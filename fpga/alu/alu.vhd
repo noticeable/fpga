@@ -50,6 +50,9 @@ architecture rtl of alu is
   signal add_cin  : std_ulogic;                                 --同理，把carry_i赋值給add_cin
   signal add_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal add_cout : std_ulogic;
+
+  signal or_res   : std_ulogic_vector(bit_width_g - 1 downto 0);
+  signal or_zout  : std_ulogic;
   
   --上面是对这个结构体进行一些中间量初始化，目前它只是定义了加法中需要的一些变量，我们需要在上面补充我们其他算法的变量
 
@@ -76,6 +79,19 @@ begin  -- rtl
 
   end process adder_inst;  
 
+
+
+  or_inst: process (side_a_i, side_b_i)
+  begin  -- process or_inst
+
+    add_res  <= std_ulogic_vector( unsigned(side_a_i) OR unsigned(side_b_i) );
+
+  end process or_inst;
+
+  	
+
+  
+
 --下面就是老师说的一个进化后的加法器，他集成了加法，加一，减法，减一
 --第一部分是对加法数add_b的操作
   -- drive adder inputs
@@ -84,7 +100,7 @@ begin  -- rtl
     side_b_i                                            when alu_add_c,
     not side_b_i                                        when alu_sub_c,
     std_ulogic_vector(to_unsigned(1, add_b'length))     when alu_inc_c,
-    not std_ulogic_vector(to_unsigned(1, add_b'length)) when alu_dec_c,
+    not std_ulogic_vector(to_unsigned(1, add_b'length)) when alu_dec_c, 
     (others => '-')                                     when others;
  
  --下面是对进位的操作
@@ -94,7 +110,7 @@ begin  -- rtl
     carry_i     when alu_add_c,
     not carry_i when alu_sub_c,
     '0'         when alu_inc_c,
-    '1'         when alu_dec_c,
+    '1'         when alu_dec_c,    
     '-'         when others;
 
 -- home work : add you code in this part to fulfill all the missing function of ALU  
