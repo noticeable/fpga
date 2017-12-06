@@ -50,6 +50,8 @@ architecture rtl of alu is
   signal add_cin  : std_ulogic;                                 --同理，把carry_i赋值給add_cin
   signal add_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal add_cout : std_ulogic;
+  -- helper signal for ander
+  signal and_res  : std_ulogic_vector(bit_width_g-1 downto 0);
   
   --上面是对这个结构体进行一些中间量初始化，目前它只是定义了加法中需要的一些变量，我们需要在上面补充我们其他算法的变量
 
@@ -75,6 +77,11 @@ begin  -- rtl
     add_cout <= res_v(res_v'high);--这一步是实现对加法结果的分片，因为我们的cpu只有16为，需要把它还原成16位如果有进位就把这个进位保存到add_cout
 
   end process adder_inst;  
+
+  and_inst: process（side_a_i,side_b_i）
+    and_res <= unsigned(side_a_i) and unsigned(side_b_i);
+  end process and_inst;
+ 
 
 --下面就是老师说的一个进化后的加法器，他集成了加法，加一，减法，减一
 --第一部分是对加法数add_b的操作
