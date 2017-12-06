@@ -50,6 +50,7 @@ architecture rtl of alu is
   signal add_cin  : std_ulogic;                                 --同理，把carry_i赋值給add_cin
   signal add_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal add_cout : std_ulogic;
+
   -- helper signal for ander
   signal and_res  : std_ulogic_vector(bit_width_g-1 downto 0);
 
@@ -59,7 +60,11 @@ architecture rtl of alu is
   -- helper signals for xorer
   signal xor_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal xor_zout : std_ulogic; 
-  
+
+  -- helper signals for noter
+  signal not_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
+  signal not_zout : std_ulogic_vector(bit_width_g - 1 downto 0);
+
   --上面是对这个结构体进行一些中间量初始化，目前它只是定义了加法中需要的一些变量，我们需要在上面补充我们其他算法的变量
 
 
@@ -130,5 +135,11 @@ begin  -- rtl
     begin
       xor_res <= std_ulogic_vector(unsigned(side_a_i) XOR unsigned(side_b_i)); 
   end process xorer_inst;  
+
+  --非运算：
+  noter_inst:process(side_a_i)
+  	begin
+  		not_res <= std_ulogic_vector(NOT(unsigned(side_a_i)));
+  	end process noter_inst;
 
 end rtl;
