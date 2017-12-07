@@ -132,8 +132,9 @@ begin  -- rtl
     end process or_inst;
 
   -- and
-  and_inst: process（side_a_i,side_b_i）
-    and_res <= unsigned(side_a_i) and unsigned(side_b_i);
+  and_inst: process(side_a_i,side_b_i)
+    begin
+    and_res <= std_ulogic_vector(unsigned(side_a_i) and unsigned(side_b_i));
   end process and_inst;
 
 end rtl;
