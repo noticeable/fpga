@@ -70,6 +70,14 @@ architecture rtl of alu is
   signal move_b    : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal move_res : std_ulogic_vector(bit_width_g - 1 downto 0);
 
+  -- helper signals for slcer
+  signal slc_res : std_ulogic_vector(bit_width_g - 1 downto 0);
+  signal slc_cout : std_ulogic;
+
+  -- helper signals for srcer
+  signal src_res : std_ulogic_vector(bit_width_g - 1 downto 0);
+  signal src_cout : std_ulogic;
+
   --上面是对这个结构体进行一些中间量初始化，目前它只是定义了加法中需要的一些变量，我们需要在上面补充我们其他算法的变量
 
 
@@ -138,7 +146,7 @@ begin  -- rtl
   -- and
   and_inst: process(side_a_i,side_b_i)
     begin
-    and_res <= std_ulogic_vector(unsigned(side_a_i) and unsigned(side_b_i));
+      and_res <= std_ulogic_vector(unsigned(side_a_i) and unsigned(side_b_i));
   end process and_inst;
 
   -- move
@@ -150,5 +158,20 @@ begin  -- rtl
     move_b <=
     side_a_i     when alu_pass_a_c,
     side_b_i     when alu_pass_b_c;
+
+  -- slc
+  slc_inst: process(side_a_i)
+  begin
+    slc_cout <= side_a_i(side_a_i'hig);
+    slc_res <= side_a_i(side_a_i'high - 1 downto 0) & slc_count;
+  end process slc_inst;
+
+  -- src
+  src_inst: process(side_a_i)
+  begin
+    src_cout <= side_a_i(0);
+    src_res <= src_count & side_a_i(side_a_i'high downto 1);
+  end process src_inst;
+
 
 end rtl;
