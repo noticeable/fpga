@@ -66,6 +66,10 @@ architecture rtl of alu is
   signal not_res  : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal not_zout : std_ulogic_vector(bit_width_g - 1 downto 0);
 
+  -- helper signals for mover
+  signal move_b    : std_ulogic_vector(bit_width_g - 1 downto 0);
+  signal move_res : std_ulogic_vector(bit_width_g - 1 downto 0);
+
   --上面是对这个结构体进行一些中间量初始化，目前它只是定义了加法中需要的一些变量，我们需要在上面补充我们其他算法的变量
 
 
@@ -136,5 +140,15 @@ begin  -- rtl
     begin
     and_res <= std_ulogic_vector(unsigned(side_a_i) and unsigned(side_b_i));
   end process and_inst;
+
+  -- move
+  move_inst: process (side_a_i,side_b_i)
+    begin
+      move_res <= std_ulogic_vector(unsigned(move_b));
+    end process move_inst;
+  with alu_func_i select
+    move_b <=
+    side_a_i     when alu_pass_a_c,
+    side_b_i     when alu_pass_b_c;
 
 end rtl;
