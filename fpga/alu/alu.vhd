@@ -54,6 +54,7 @@ architecture rtl of alu is
   -- helper signal for ander
   signal and_res  : std_ulogic_vector(bit_width_g-1 downto 0);
 
+  --helper signals for orer
   signal or_res   : std_ulogic_vector(bit_width_g - 1 downto 0);
   signal or_zout  : std_ulogic;
   
@@ -88,25 +89,7 @@ begin  -- rtl
       res_v(res_v'high - 1 downto res_v'low + 1));
     add_cout <= res_v(res_v'high);--这一步是实现对加法结果的分片，因为我们的cpu只有16为，需要把它还原成16位如果有进位就把这个进位保存到add_cout
 
-  end process adder_inst;
-
-
-
-  or_inst: process (side_a_i, side_b_i)
-  begin  -- process or_inst
-
-    add_res  <= std_ulogic_vector( unsigned(side_a_i) OR unsigned(side_b_i) );
-
-  end process or_inst;
-
-  	
-
-  
-
-  and_inst: process（side_a_i,side_b_i）
-    and_res <= unsigned(side_a_i) and unsigned(side_b_i);
-  end process and_inst;
- 
+  end process adder_inst; 
 
 --下面就是老师说的一个进化后的加法器，他集成了加法，加一，减法，减一
 --第一部分是对加法数add_b的操作
@@ -136,10 +119,21 @@ begin  -- rtl
       xor_res <= std_ulogic_vector(unsigned(side_a_i) XOR unsigned(side_b_i)); 
   end process xorer_inst;  
 
-  --非运算：
+  --not
   noter_inst:process(side_a_i)
   	begin
   		not_res <= std_ulogic_vector(NOT(unsigned(side_a_i)));
   	end process noter_inst;
+
+  -- or
+  or_inst: process (side_a_i, side_b_i)
+    begin  -- process or_inst
+      add_res  <= std_ulogic_vector( unsigned(side_a_i) OR unsigned(side_b_i) );
+    end process or_inst;
+
+  -- and
+  and_inst: process（side_a_i,side_b_i）
+    and_res <= unsigned(side_a_i) and unsigned(side_b_i);
+  end process and_inst;
 
 end rtl;
