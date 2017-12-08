@@ -133,9 +133,9 @@ begin  -- rtl
 
   --not
   noter_inst:process(side_a_i)
-  	begin
-  		not_res <= std_ulogic_vector(NOT(unsigned(side_a_i)));
-  	end process noter_inst;
+    begin
+      not_res <= std_ulogic_vector(NOT(unsigned(side_a_i)));
+    end process noter_inst;
 
   -- or
   or_inst: process (side_a_i, side_b_i)
@@ -157,12 +157,13 @@ begin  -- rtl
   with alu_func_i select
     move_b <=
     side_a_i     when alu_pass_a_c,
-    side_b_i     when alu_pass_b_c;
+    side_b_i     when alu_pass_b_c,
+    (others => '-')                                     when others;
 
   -- slc
   slc_inst: process(side_a_i)
   begin
-    slc_count <= side_a_i(side_a_i'hig);
+    slc_count <= side_a_i(side_a_i'high);
     slc_res <= side_a_i(side_a_i'high - 1 downto 0) & slc_count;
   end process slc_inst;
 
