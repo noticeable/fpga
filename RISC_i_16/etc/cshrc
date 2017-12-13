@@ -1,0 +1,19 @@
+# source this file
+
+module unload Acrobat
+module load Acrobat
+module unload freeware
+module load freeware
+
+module unload modelsim
+module load modelsim/6.1f
+module unload synopsys
+module load synopsys/2005.09-SP2
+
+alias tech_doc 'acroread /opt/tech5/c11n/v3.2.0/starlib_reg_10t/doc/databook_c11n_starlib_reg_10t_v3.2.0.pdf'
+alias sold 'acroread /opt/sold_2005.09/doc/online/top.pdf'
+alias modelsim_doc 'acroread $MODELSIM_DOC_FILE'
+
+alias cdsrc 'cd ~/p16/src'
+alias cdsim 'cd ~/p16/sim'
+alias cdsyn 'cd ~/p16/syn'

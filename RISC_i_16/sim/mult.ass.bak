@@ -1,0 +1,119 @@
+;; multiply two values
+;; 12/2004 Manuel Wukits
+
+;; register
+;; r0 zero
+;; r1 low byte of resultat
+;; r2 high byte of resultat
+;; r3 multipicant
+;; r4 loads,jumps,temp
+;; r5 address_data
+;; r6 counter
+;; r7 multiplicant
+
+
+equ prog_start, 0000h ; start address of program rom
+equ data_start, 8000h ; start address of data ram
+equ mem_dump_addr, 0ffffh
+equ zero, 0000h
+equ initial_count, 0010h 
+equ eight, 0008h
+equ offset_in2, 0001h
+equ offset_save_upper, 0002h
+equ max_mult, 0008h
+;; 0040h
+
+macro write_mem_dump
+
+    loadi r6, mem_dump_addr 
+    store r4, r6            ; dump memory to file
+
+endm
+
+org data_start
+in1: db 80
+in2: db 81
+resH: db 0
+resL: db 0
+
+
+org prog_start
+  ;; load initial values, counter = 16
+  ;; res = in1
+  ;; r3  = in2
+  loadi r0, 0
+  loadi r5, data_start  
+
+start_multiply:
+  ;; load multiplicant, counter, result
+  loadi r6, initial_count
+  move  r2, r0
+  move  r1, r0
+  loadi r4, offset_in2
+  add   r4, r5
+  load  r3, r4
+  move  r7, r3
+
+is_bit_one:  
+  ;; loop until in2 left shifted a 1 and counter > 0
+  shl   r3
+  loadi r4, add_shift_start
+  ;; jump when 1 shifted out, to start calc
+  jumpc r4
+  loadi r4, save_result
+  dec   r6
+  ;; jump when counter = 0 to save of result
+  jumpz r4
+  ;; else repeat shifting
+  loadi r4, is_bit_one
+  jump r4
+
+add_shift_start:
+  load  r1, r5
+shiftandadd:
+  loadi r4, save_result
+/*  dec   r6
+  ;; jump when counter = 0 to save of result
+  jumpz r4
+  ;; shift left for next bit and check carry 
+  shl   r3
+  loadi r4, add_op2
+  jumpc r4
+shift:
+  ;; shift 
+  ;; result
+  shl   r1
+  shlc  r2
+  loadi r4, shift_add
+  jump  r4
+op_two_add:*/
+  ;; if one shifted out 
+  ;;   => add, and 
+  ;; then jump 
+  ;; back to shift  
+  add   r1, r7
+  addc  r1, r0
+  loadi r4, shift
+  jump  r4
+
+save_result:
+  ;; save data
+  loadi r4, offset_save_upper
+  add   r4, r5
+  store r2, r4
+  inc   r4
+  store r1, r4
+  ;; make new pointer and seek if finished
+  loadi r4, eight
+  add   r5, r4
+  loadi r4, max_mult
+  comp   r5, r4
+  loadi r4, end
+  jumpz r4
+  loadi r4, start_multiply
+  jump  r4
+
+end:
+  loadi r4, data_start
+  write_mem_dump
+  sleep  

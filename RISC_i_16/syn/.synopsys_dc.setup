@@ -1,0 +1,56 @@
+#
+# .synopsys_dc.setup
+#
+
+#----------------------------------------------------------------------
+# some variables
+#----------------------------------------------------------------------
+
+set SYNOPSYS  [getenv SYNOPSYS]
+set TECH_DIR  /opt/tech5/c11n/v3.2.0
+set TECH      starlib_reg_10t
+set CORNER    Pnom_V120_T027
+
+set INWAY_DIR /opt/inway_5.2.1
+set WORK_DIR  work
+
+#----------------------------------------------------------------------
+# leverage INWAY global setup
+#----------------------------------------------------------------------
+
+set setup_inway "$INWAY_DIR/dc/etc/synopsys_iwdc.setup"
+if { [file exists $setup_inway] } {
+  echo "Sourcing '$setup_inway'."
+  source $setup_inway
+} else {
+  echo "Error: Missing setup file '$setup_inway'."
+  exit 1
+}
+
+#----------------------------------------------------------------------
+# specify work dir
+#----------------------------------------------------------------------
+
+if { ! [file exists "$WORK_DIR"] } {
+	file mkdir "$WORK_DIR"
+}
+define_design_lib WORK -path "$WORK_DIR"
+
+#----------------------------------------------------------------------
+# search path & library settings
+#----------------------------------------------------------------------
+
+set search_path       [concat $search_path [list "$TECH_DIR/$TECH/synopsys"]]
+set target_library    [list "${TECH}_${CORNER}.db"]
+set symbol_library    [list "$TECH.sdb"]
+set link_library      [list "$target_library" "$synthetic_library"]
+set wire_load_library [list "${TECH}_wire.db"]
+
+#----------------------------------------------------------------------
+# set some additional stuff
+#----------------------------------------------------------------------
+
+set hdlin_report_inferred_modules true 
+set hdlin_check_no_latch true
+
+# Taf!
