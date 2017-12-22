@@ -724,3 +724,20 @@ vsim work.cpu_tb
 # Loading work.mem_pack(body)
 # Loading work.memory(beh)
 # Loading work.memory_impl(memory_arch)
+add wave -position insertpoint  \
+sim:/cpu_tb/res
+run
+# ** Warning: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /cpu_tb/memory_inst/memory_impl_inst
+# ** Fatal: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /cpu_tb/memory_inst/memory_impl_inst/MemoryBehavior File: ../src/memory.vhd
+# Fatal error in Process MemoryBehavior at ../src/memory.vhd line 1187
+# 
+# HDL call sequence:
+# Stopped at ../src/memory.vhd 1187 Subprogram GetNextChar
+# called from  ../src/memory.vhd 2294 Subprogram ReadNewSym
+# called from  ../src/memory.vhd 2336 Subprogram InitMemory
+# called from  ../src/memory.vhd 2538 Process MemoryBehavior
+# 
