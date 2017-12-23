@@ -1,0 +1,16 @@
+vsim work.alu
+# vsim work.alu 
+# Start time: 03:05:09 on Dec 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.alu(rtl)
+run 1000ns
+run 1000ns
+run -all
+# End time: 03:12:07 on Dec 23,2017, Elapsed time: 0:06:58
+# Errors: 0, Warnings: 0
