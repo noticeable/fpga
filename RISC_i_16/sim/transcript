@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+# vsim cpu_tb -gfile_base_g=barrier 
+# Start time: 14:21:05 on Dec 23,2017
+=======
+<<<<<<< HEAD
 vsim work.alu
 # vsim work.alu 
 # Start time: 03:05:09 on Dec 23,2017
@@ -515,14 +519,357 @@ vsim work.alu
 # vsim work.alu 
 # Start time: 23:40:11 on Dec 22,2017
 >>>>>>> master
+>>>>>>> master
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu_tb(beh)
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
 # Loading synopsys.attributes
 # Loading ieee.std_logic_misc(body)
-# Loading ieee.numeric_std(body)
-# Loading work.risc_i_16_pack
 # Loading work.alu(rtl)
+<<<<<<< HEAD
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mem_pack(body)
+# Loading work.memory(beh)
+# Loading work.memory_impl(memory_arch)
+run -all
+# 
+#  Assembling 0124 lines complete, code & data size 00097 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: MOVE $a, $b    
+#      5: MOVE $a, $b    
+#      6: LOADI $a, imm  
+#      8: LOADI $a, imm  
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     16: LOADI $a, imm  
+#     18: STORE $a, $b   
+#     19: LOADI $a, imm  
+#     21: LOAD $a, $b    
+#     22: LOADI $a, imm  
+#     24: LOAD $a, $b    
+#     25: LOADI $a, imm  
+#     27: LOAD $a, $b    
+#     28: LOADI $a, imm  
+#     30: LOADI $a, imm  
+#     32: MOVE $a, $b    
+#     33: SUB $a, $b     
+#     34: MOVE $a, $b    
+#     35: LOADI $a, imm  
+#     37: JUMPZ $a       
+#     38: JUMPC $a       
+#     39: LOADI $a, imm  
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     65: INC $a         
+#     66: LOADI $a, imm  
+#     68: JUMP $a        
+#     32: MOVE $a, $b    
+#     33: SUB $a, $b     
+#     34: MOVE $a, $b    
+#     35: LOADI $a, imm  
+#     37: JUMPZ $a       
+#     38: JUMPC $a       
+#     39: LOADI $a, imm  
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     65: INC $a         
+#     66: LOADI $a, imm  
+#     68: JUMP $a        
+#     32: MOVE $a, $b    
+#     33: SUB $a, $b     
+#     34: MOVE $a, $b    
+#     35: LOADI $a, imm  
+#     37: JUMPZ $a       
+#     38: JUMPC $a       
+#     39: LOADI $a, imm  
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     65: INC $a         
+#     66: LOADI $a, imm  
+#     68: JUMP $a        
+#     32: MOVE $a, $b    
+#     33: SUB $a, $b     
+#     34: MOVE $a, $b    
+#     35: LOADI $a, imm  
+#     37: JUMPZ $a       
+#     38: JUMPC $a       
+#     39: LOADI $a, imm  
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     47: JUMPC $a       
+#     48: MOVE $a, $b    
+#     49: ADD $a, $b     
+#     50: ADD $a, $b     
+#     51: LOAD $a, $b    
+#     52: LOADI $a, imm  
+#     54: ADD $a, $b     
+#     55: ADD $a, $b     
+#     56: STORE $a, $b   
+#     57: INC $a         
+#     58: LOADI $a, imm  
+#     60: LOAD $a, $b    
+#     61: ADD $a, $b     
+#     62: LOADI $a, imm  
+#     64: JUMP $a        
+#     41: MOVE $a, $b    
+#     42: SUB $a, $b     
+#     43: MOVE $a, $b    
+#     44: LOADI $a, imm  
+#     46: JUMPZ $a       
+#     65: INC $a         
+#     66: LOADI $a, imm  
+#     68: JUMP $a        
+#     32: MOVE $a, $b    
+#     33: SUB $a, $b     
+#     34: MOVE $a, $b    
+#     35: LOADI $a, imm  
+#     37: JUMPZ $a       
+#     69: LOADI $a, imm  
+#     71: LOADI $a, imm  
+#     73: STORE $a, $b   
+# Write Memory Dump File: from address 8000h size 00512 words
+#     74: SLEEP          
+add wave -position end  /cpu_tb/memory_inst/memory_impl_inst/MemoryBehavior/memo
+restart -f
+run 10000ns
+# GetModuleFileName: 找不到指定的模块。
+# 
+# 
+# 
+#  Assembling 0124 lines complete, code & data size 00097 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: MOVE $a, $b    
+#      5: MOVE $a, $b    
+#      6: LOADI $a, imm  
+#      8: LOADI $a, imm  
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+=======
 <<<<<<< HEAD
 run 1000ns
 run 1000ns
@@ -756,4 +1103,5 @@ run
 # 
 # End time: 00:01:51 on Dec 23,2017, Elapsed time: 0:03:25
 # Errors: 2, Warnings: 1
+>>>>>>> master
 >>>>>>> master

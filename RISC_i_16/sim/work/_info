@@ -32,6 +32,11 @@ V;^FfzkP9EDO2bWbIiE?ML2
 Z10 OV;C;10.5b;63
 30
 <<<<<<< HEAD
+Z11 !s110 1514005073
+!i10b 1
+Z12 !s108 1514005073.000000
+=======
+<<<<<<< HEAD
 Z11 !s110 1513969426
 !i10b 1
 Z12 !s108 1513969426.000000
@@ -39,6 +44,7 @@ Z12 !s108 1513969426.000000
 Z11 !s110 1513956027
 !i10b 1
 Z12 !s108 1513956027.000000
+>>>>>>> master
 >>>>>>> master
 Z13 !s90 -87|../src/alu.vhd|
 Z14 !s107 ../src/alu.vhd|
@@ -92,6 +98,13 @@ VSj26gFIg9_o=<GV;G4IZS3
 R10
 30
 <<<<<<< HEAD
+Z18 !s110 1514005074
+!i10b 1
+R12
+Z19 !s90 -87|../src/control.vhd|
+Z20 !s107 ../src/control.vhd|
+=======
+<<<<<<< HEAD
 R11
 !i10b 1
 R12
@@ -103,6 +116,7 @@ Z19 !s110 1513956046
 Z20 !s108 1513956046.000000
 Z21 !s90 -87|../src/control.vhd|
 Z22 !s107 ../src/control.vhd|
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -120,17 +134,24 @@ VUPcK76o5;2zR5[YK4ja861
 R10
 30
 <<<<<<< HEAD
+R18
+=======
+<<<<<<< HEAD
 R11
+>>>>>>> master
 !i10b 1
 R12
-R18
 R19
+<<<<<<< HEAD
+R20
+=======
 =======
 R19
 !i10b 1
 R20
 R21
 R22
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -147,11 +168,16 @@ R6
 R7
 R0
 <<<<<<< HEAD
+Z21 8../src/cpu.vhd
+Z22 F../src/cpu.vhd
+=======
+<<<<<<< HEAD
 Z20 8../src/cpu.vhd
 Z21 F../src/cpu.vhd
 =======
 Z23 8../src/cpu.vhd
 Z24 F../src/cpu.vhd
+>>>>>>> master
 >>>>>>> master
 l0
 L15
@@ -159,6 +185,13 @@ V6<cgSNz:i[_Lo=:`KTZI72
 !s100 4dQ48M_C3N15]>8I=[njT0
 R10
 30
+<<<<<<< HEAD
+R18
+!i10b 1
+Z23 !s108 1514005074.000000
+Z24 !s90 -87|../src/cpu.vhd|
+Z25 !s107 ../src/cpu.vhd|
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -171,6 +204,7 @@ Z25 !s110 1513956057
 Z26 !s108 1513956057.000000
 Z27 !s90 -87|../src/cpu.vhd|
 Z28 !s107 ../src/cpu.vhd|
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -188,17 +222,24 @@ V6G@6PzazobE6iTGOH2<=32
 R10
 30
 <<<<<<< HEAD
+R18
+=======
+<<<<<<< HEAD
 R11
+>>>>>>> master
 !i10b 1
-R12
-R22
 R23
+<<<<<<< HEAD
+R24
+R25
+=======
 =======
 R25
 !i10b 1
 R26
 R27
 R28
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -207,16 +248,24 @@ Ecpu_tb
 <<<<<<< HEAD
 R1
 R2
+<<<<<<< HEAD
+Z26 DPx12 modelsim_lib 4 util 0 22 I9VUm]?fD[2nYZzgoDM?l2
+=======
 Z24 DPx12 modelsim_lib 4 util 0 22 I9VUm]?fD[2nYZzgoDM?l2
 =======
 R16
 R2
 Z29 DPx12 modelsim_lib 4 util 0 22 I9VUm]?fD[2nYZzgoDM?l2
 >>>>>>> master
+>>>>>>> master
 R3
 R7
 R6
 R0
+<<<<<<< HEAD
+Z27 8../src/cpu_tb.vhd
+Z28 F../src/cpu_tb.vhd
+=======
 <<<<<<< HEAD
 Z25 8../src/cpu_tb.vhd
 Z26 F../src/cpu_tb.vhd
@@ -224,12 +273,20 @@ Z26 F../src/cpu_tb.vhd
 Z30 8../src/cpu_tb.vhd
 Z31 F../src/cpu_tb.vhd
 >>>>>>> master
+>>>>>>> master
 l0
 L22
 V8kh;ZN59[b_m:W5Zcmj1i2
 !s100 VL]n3_]K[SP3GJka_WTBj2
 R10
 30
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+Z29 !s90 -87|../src/cpu_tb.vhd|
+Z30 !s107 ../src/cpu_tb.vhd|
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -243,25 +300,35 @@ Z33 !s108 1513956133.000000
 Z34 !s90 -87|../src/cpu_tb.vhd|
 Z35 !s107 ../src/cpu_tb.vhd|
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-87
 R15
 Abeh
 R2
 <<<<<<< HEAD
+R26
+=======
+<<<<<<< HEAD
 R24
+>>>>>>> master
 R3
 R7
 R6
-Z29 DEx4 work 6 cpu_tb 0 22 8kh;ZN59[b_m:W5Zcmj1i2
+Z31 DEx4 work 6 cpu_tb 0 22 8kh;ZN59[b_m:W5Zcmj1i2
 l56
 L29
-Z30 VXmO8Y2cQTE?J@<1oakEi>1
-Z31 !s100 lFO5PJLziDB7l9cGa_[c^2
+Z32 VXmO8Y2cQTE?J@<1oakEi>1
+Z33 !s100 lFO5PJLziDB7l9cGa_[c^2
 R10
 30
-R11
+R18
 !i10b 1
+<<<<<<< HEAD
+R23
+R29
+R30
+=======
 R12
 R27
 R28
@@ -283,6 +350,7 @@ R33
 R34
 R35
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-87
 R15
@@ -298,11 +366,16 @@ R6
 R7
 R0
 <<<<<<< HEAD
+Z34 8../src/datapath.vhd
+Z35 F../src/datapath.vhd
+=======
+<<<<<<< HEAD
 Z32 8../src/datapath.vhd
 Z33 F../src/datapath.vhd
 =======
 Z36 8../src/datapath.vhd
 Z37 F../src/datapath.vhd
+>>>>>>> master
 >>>>>>> master
 l0
 L16
@@ -314,6 +387,10 @@ R10
 R11
 !i10b 1
 R12
+<<<<<<< HEAD
+Z36 !s90 -87|../src/datapath.vhd|
+Z37 !s107 ../src/datapath.vhd|
+=======
 Z34 !s90 -87|../src/datapath.vhd|
 Z35 !s107 ../src/datapath.vhd|
 =======
@@ -322,6 +399,7 @@ Z38 !s110 1513956041
 Z39 !s108 1513956040.000000
 Z40 !s90 -87|../src/datapath.vhd|
 Z41 !s107 ../src/datapath.vhd|
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -342,6 +420,10 @@ R10
 R11
 !i10b 1
 R12
+<<<<<<< HEAD
+R36
+R37
+=======
 R34
 R35
 =======
@@ -351,16 +433,25 @@ R39
 R40
 R41
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-87
 R15
 Pmem_pack
 <<<<<<< HEAD
+Z38 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+=======
+<<<<<<< HEAD
 Z36 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+>>>>>>> master
 R6
 R7
 R1
 R0
+<<<<<<< HEAD
+Z39 8../src/memory.vhd
+Z40 F../src/memory.vhd
+=======
 Z37 8../src/memory.vhd
 Z38 F../src/memory.vhd
 =======
@@ -372,6 +463,7 @@ R0
 Z43 8../src/memory.vhd
 Z44 F../src/memory.vhd
 >>>>>>> master
+>>>>>>> master
 l0
 L31
 V7N;ljIhmzLL1d`=Z?4Ef;3
@@ -379,6 +471,13 @@ V7N;ljIhmzLL1d`=Z?4Ef;3
 R10
 31
 b1
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+Z41 !s90 -93|../src/memory.vhd|
+Z42 !s107 ../src/memory.vhd|
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -392,16 +491,22 @@ Z46 !s108 1513956115.000000
 Z47 !s90 -93|../src/memory.vhd|
 Z48 !s107 ../src/memory.vhd|
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-93
 R15
 Bbody
+<<<<<<< HEAD
+Z43 DPx4 work 8 mem_pack 0 22 7N;ljIhmzLL1d`=Z?4Ef;3
+R38
+=======
 <<<<<<< HEAD
 Z41 DPx4 work 8 mem_pack 0 22 7N;ljIhmzLL1d`=Z?4Ef;3
 R36
 =======
 Z49 DPx4 work 8 mem_pack 0 22 7N;ljIhmzLL1d`=Z?4Ef;3
 R42
+>>>>>>> master
 >>>>>>> master
 R6
 R7
@@ -411,6 +516,13 @@ Vizc7LB6ZVXNYlNh4kZ3Q`1
 !s100 EXj2;VzUQWEkJ`Q6dOg8O0
 R10
 31
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+R41
+R42
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -424,17 +536,22 @@ R46
 R47
 R48
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-93
 R15
 Ememory
 <<<<<<< HEAD
 R1
-R36
-R41
+R38
+R43
 R6
 R7
 R0
+<<<<<<< HEAD
+R39
+R40
+=======
 R37
 R38
 =======
@@ -447,12 +564,20 @@ R0
 R43
 R44
 >>>>>>> master
+>>>>>>> master
 l0
 L2656
 Ve>;dh7Y?fTzga3n;o036B0
 !s100 =E[1k62mYUZWLzPZLDCYO3
 R10
 31
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+R41
+R42
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -466,16 +591,22 @@ R46
 R47
 R48
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-93
 R15
 Abeh
+<<<<<<< HEAD
+R38
+R43
+=======
 <<<<<<< HEAD
 R36
 R41
 =======
 R42
 R49
+>>>>>>> master
 >>>>>>> master
 R6
 R7
@@ -487,6 +618,13 @@ Vk:CQ[0:VRi]MbzRaUj8?L2
 R10
 31
 <<<<<<< HEAD
+R18
+!i10b 1
+R23
+R41
+R42
+=======
+<<<<<<< HEAD
 R11
 !i10b 1
 R12
@@ -499,17 +637,22 @@ R46
 R47
 R48
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-93
 R15
 Ememory_impl
 <<<<<<< HEAD
 R1
-R36
-R41
+R38
+R43
 R6
 R7
 R0
+<<<<<<< HEAD
+R39
+R40
+=======
 R37
 R38
 =======
@@ -522,12 +665,20 @@ R0
 R43
 R44
 >>>>>>> master
+>>>>>>> master
 l0
 L564
 Vf1oLZH>@Om4Q78CEWTeSf2
 !s100 ??ddKc?1FMD@=86XVCedY0
 R10
 31
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+R41
+R42
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -541,16 +692,22 @@ R46
 R47
 R48
 >>>>>>> master
+>>>>>>> master
 !i113 1
 o-93
 R15
 Amemory_arch
+<<<<<<< HEAD
+R38
+R43
+=======
 <<<<<<< HEAD
 R36
 R41
 =======
 R42
 R49
+>>>>>>> master
 >>>>>>> master
 R6
 R7
@@ -562,6 +719,13 @@ V^eZ9:Lmj8WAii8YkEDJ?b2
 R10
 31
 <<<<<<< HEAD
+R18
+!i10b 1
+R23
+R41
+R42
+=======
+<<<<<<< HEAD
 R11
 !i10b 1
 R12
@@ -573,6 +737,7 @@ R45
 R46
 R47
 R48
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-93
@@ -589,11 +754,16 @@ R6
 R7
 R0
 <<<<<<< HEAD
+Z44 8../src/reg_file.vhd
+Z45 F../src/reg_file.vhd
+=======
+<<<<<<< HEAD
 Z42 8../src/reg_file.vhd
 Z43 F../src/reg_file.vhd
 =======
 Z50 8../src/reg_file.vhd
 Z51 F../src/reg_file.vhd
+>>>>>>> master
 >>>>>>> master
 l0
 L15
@@ -605,6 +775,10 @@ R10
 R11
 !i10b 1
 R12
+<<<<<<< HEAD
+Z46 !s90 -87|../src/reg_file.vhd|
+Z47 !s107 ../src/reg_file.vhd|
+=======
 Z44 !s90 -87|../src/reg_file.vhd|
 Z45 !s107 ../src/reg_file.vhd|
 =======
@@ -613,6 +787,7 @@ Z52 !s110 1513956034
 Z53 !s108 1513956034.000000
 Z54 !s90 -87|../src/reg_file.vhd|
 Z55 !s107 ../src/reg_file.vhd|
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -633,6 +808,10 @@ R10
 R11
 !i10b 1
 R12
+<<<<<<< HEAD
+R46
+R47
+=======
 R44
 R45
 =======
@@ -641,6 +820,7 @@ R52
 R53
 R54
 R55
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -689,11 +869,16 @@ R6
 R7
 R0
 <<<<<<< HEAD
+Z48 8../src/sync_reset.vhd
+Z49 F../src/sync_reset.vhd
+=======
+<<<<<<< HEAD
 Z46 8../src/sync_reset.vhd
 Z47 F../src/sync_reset.vhd
 =======
 Z57 8../src/sync_reset.vhd
 Z58 F../src/sync_reset.vhd
+>>>>>>> master
 >>>>>>> master
 l0
 L15
@@ -701,6 +886,13 @@ VI^UkOlDoTB^Oz[MLiBZM[2
 !s100 A6hfDM1UG4I4=f2A_iJUY3
 R10
 30
+<<<<<<< HEAD
+R18
+!i10b 1
+R23
+Z50 !s90 -87|../src/sync_reset.vhd|
+Z51 !s107 ../src/sync_reset.vhd|
+=======
 <<<<<<< HEAD
 R11
 !i10b 1
@@ -713,6 +905,7 @@ Z59 !s110 1513956051
 Z60 !s108 1513956051.000000
 Z61 !s90 -87|../src/sync_reset.vhd|
 Z62 !s107 ../src/sync_reset.vhd|
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87
@@ -730,6 +923,13 @@ Vz_a6m8n9lC6=XB@Q8_hkV2
 R10
 30
 <<<<<<< HEAD
+R18
+!i10b 1
+R23
+R50
+R51
+=======
+<<<<<<< HEAD
 R11
 !i10b 1
 R12
@@ -741,6 +941,7 @@ R59
 R60
 R61
 R62
+>>>>>>> master
 >>>>>>> master
 !i113 1
 o-87

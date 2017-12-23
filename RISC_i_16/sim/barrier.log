@@ -1,0 +1,239 @@
+   1  ;;register assignment
+   2  ;;
+   3  ;;
+   4  ;;r3 r4		address for jump
+   5  ;;r7		counter
+   6  
+   7  equ prog_start, 0000h ;start address of program rom
+   8  equ data_start, 8000h ;start address of data ram
+   9  equ mem_dump_addr, 0ffffh
+  10  
+  11  macro write_mem_dump
+  12  
+  13  	loadi r6, mem_dump_addr
+  14  	store r4, r6
+  15  
+  16  endm
+  17  
+  18  org data_start
+  19  in1:	
+  20  	db 65
+  21  	db 66
+  22  	db 67
+  23  	db 68
+  24  	db 69
+  25  	db 70
+  26  	db 71
+  27  	db 72
+  28  	db 0
+  29  in2:	db 4
+  30  res:	db 0
+  31  	db 0
+  32  	db 0
+  33  	db 0
+  34  	db 0
+  35  	db 0
+  36  	db 0
+  37  	db 0
+  38  
+  39  c_i:	db 0
+  40  c_j:	db 0
+  41  c_m:	db 0
+  42  len:	db 0
+  43  
+  44  org prog_start
+  45  
+  46  	loadi r0, 0		;zero is an important number
+  47  
+  48  	loadi r5, in1		;first data address of input
+  49  
+  50  	move r2, r0		;r2='\0'
+  51  	move r7, r0		;r7=0 init counter
+  52  	loadi r3, next		;load the address of next
+  53  	loadi r6, strlen	;load the address of strlen
+  54  	
+  55  strlen:
+  56  	load r1,r5		;load the first data of in1  => r1
+  57  	comp r1, r2		;if is null
+  58  	jumpz r3		
+  59  	inc r5
+  60  	inc r7
+  61  	jump r6		
+  62  
+  63  next: 				;result is in r7
+  64  	loadi r1, len
+  65  	store r7, r1		;store r1 to len
+  66  
+  67  	loadi r6, c_j
+  68  	load r2, r6		;r2=j
+  69  	loadi r6, c_m
+  70  	load r5, r6		;r5=m
+  71  	loadi r6, c_i
+  72  	load r1, r6		;r1=i
+  73  
+  74  	loadi r3, in1		;str
+  75  	loadi r4, res		;out
+  76  
+  77  while1:				;r1=i r2=j r3=[in1] r4=[res] r5=m r7=len
+  78  	move r0, r7
+  79  	sub r7, r2
+  80  	move r7, r0
+  81  	loadi r6, out_while1
+  82  	jumpz r6		;while(j<len)
+  83  	jumpc r6
+  84  	loadi r5, 0
+  85  	
+  86  while2:
+  87  	move r0, r7
+  88  	sub r7, r5
+  89  	move r7, r0
+  90  	loadi r6, out_while2
+  91  	jumpz r6		;while(m<len)
+  92  	jumpc r6
+  93  	
+  94  	move r0, r1
+  95  	add r0, r5		;m+i
+  96  	add r0, r3		;r0=&str[m+i]
+  97  	load r6, r0		;r6=str[m+i]
+  98  	
+  99  	loadi r0, 0
+ 100  	add r0, r2
+ 101  	add r0, r4		;r0=&out[j]
+ 102  	store r6, r0		;out[j]=str[m+i]	
+ 103  
+ 104  	inc r2			;j++
+ 105  	
+ 106  	loadi r6, in2
+ 107  	load r0, r6		;r0=n
+ 108  	add r5, r0		;m=m+n
+ 109  
+ 110  	loadi r6, while2
+ 111  	jump r6			
+ 112  				;}
+ 113  
+ 114  out_while2:
+ 115  	inc r1			;i++
+ 116  	
+ 117  	loadi r6, while1
+ 118  	jump r6			;}
+ 119  
+ 120  
+ 121  out_while1:
+ 122  	loadi r4, data_start
+ 123  	write_mem_dump
+ 124  	sleep	
+
+
+      Assembling complete : found 000 Errors
+                            found 000 Warnings
+
+      Labels              Address
+      ---------------------------
+      IN1                 0000h
+      IN2                 0009h
+      RES                 000Ah
+      C_I                 0012h
+      C_J                 0013h
+      C_M                 0014h
+      LEN                 0015h
+      NEXT                0010h
+      STRLEN              000Ah
+      WHILE1              0020h
+      OUT_WHILE1          0045h
+      WHILE2              0029h
+      OUT_WHILE2          0041h
+
+      Constants           Value  
+      ---------------------------
+      PROG_START          0000h
+      DATA_START          0000h
+      MEM_DUMP_ADDR       00FFh
+
+
+      Contents of Memory: Program-Code ROM
+      ------------------------------------
+
+0000hex  LOADI   R0, 0000hex            000010_00000_00000  0000000000000000
+0002hex  LOADI   R5, 8000hex            000010_00101_00000  1000000000000000
+0004hex  MOVE    R2, R0                 001100_00010_00000
+0005hex  MOVE    R7, R0                 001100_00111_00000
+0006hex  LOADI   R3, 0010hex            000010_00011_00000  0000000000010000
+0008hex  LOADI   R6, 000Ahex            000010_00110_00000  0000000000001010
+000Ahex  LOAD    R1, R5                 000011_00001_00101
+000Bhex  COMP    R1, R2                 011000_00001_00010
+000Chex  JUMPZ   R3                     001011_00011_00000
+000Dhex  INC     R5                     011010_00101_00000
+000Ehex  INC     R7                     011010_00111_00000
+000Fhex  JUMP    R6                     001000_00110_00000
+0010hex  LOADI   R1, 8015hex            000010_00001_00000  1000000000010101
+0012hex  STORE   R7, R1                 000100_00111_00001
+0013hex  LOADI   R6, 8013hex            000010_00110_00000  1000000000010011
+0015hex  LOAD    R2, R6                 000011_00010_00110
+0016hex  LOADI   R6, 8014hex            000010_00110_00000  1000000000010100
+0018hex  LOAD    R5, R6                 000011_00101_00110
+0019hex  LOADI   R6, 8012hex            000010_00110_00000  1000000000010010
+001Bhex  LOAD    R1, R6                 000011_00001_00110
+001Chex  LOADI   R3, 8000hex            000010_00011_00000  1000000000000000
+001Ehex  LOADI   R4, 800Ahex            000010_00100_00000  1000000000001010
+0020hex  MOVE    R0, R7                 001100_00000_00111
+0021hex  SUB     R7, R2                 010110_00111_00010
+0022hex  MOVE    R7, R0                 001100_00111_00000
+0023hex  LOADI   R6, 0045hex            000010_00110_00000  0000000001000101
+0025hex  JUMPZ   R6                     001011_00110_00000
+0026hex  JUMPC   R6                     001010_00110_00000
+0027hex  LOADI   R5, 0000hex            000010_00101_00000  0000000000000000
+0029hex  MOVE    R0, R7                 001100_00000_00111
+002Ahex  SUB     R7, R5                 010110_00111_00101
+002Bhex  MOVE    R7, R0                 001100_00111_00000
+002Chex  LOADI   R6, 0041hex            000010_00110_00000  0000000001000001
+002Ehex  JUMPZ   R6                     001011_00110_00000
+002Fhex  JUMPC   R6                     001010_00110_00000
+0030hex  MOVE    R0, R1                 001100_00000_00001
+0031hex  ADD     R0, R5                 010100_00000_00101
+0032hex  ADD     R0, R3                 010100_00000_00011
+0033hex  LOAD    R6, R0                 000011_00110_00000
+0034hex  LOADI   R0, 0000hex            000010_00000_00000  0000000000000000
+0036hex  ADD     R0, R2                 010100_00000_00010
+0037hex  ADD     R0, R4                 010100_00000_00100
+0038hex  STORE   R6, R0                 000100_00110_00000
+0039hex  INC     R2                     011010_00010_00000
+003Ahex  LOADI   R6, 8009hex            000010_00110_00000  1000000000001001
+003Chex  LOAD    R0, R6                 000011_00000_00110
+003Dhex  ADD     R5, R0                 010100_00101_00000
+003Ehex  LOADI   R6, 0029hex            000010_00110_00000  0000000000101001
+0040hex  JUMP    R6                     001000_00110_00000
+0041hex  INC     R1                     011010_00001_00000
+0042hex  LOADI   R6, 0020hex            000010_00110_00000  0000000000100000
+0044hex  JUMP    R6                     001000_00110_00000
+0045hex  LOADI   R4, 8000hex            000010_00100_00000  1000000000000000
+0047hex  LOADI   R6, FFFFhex            000010_00110_00000  1111111111111111
+0049hex  STORE   R4, R6                 000100_00100_00110
+004Ahex  SLEEP                          000001_00000_00000
+
+
+      Contents of Memory: Working RAM
+      ---------------------------------
+
+
+8000hex  0000000001000001
+8001hex  0000000001000010
+8002hex  0000000001000011
+8003hex  0000000001000100
+8004hex  0000000001000101
+8005hex  0000000001000110
+8006hex  0000000001000111
+8007hex  0000000001001000
+8008hex  0000000000000000
+8009hex  0000000000000100
+800Ahex  0000000000000000
+800Bhex  0000000000000000
+800Chex  0000000000000000
+800Dhex  0000000000000000
+800Ehex  0000000000000000
+800Fhex  0000000000000000
+8010hex  0000000000000000
+8011hex  0000000000000000
+8012hex  0000000000000000
+8013hex  0000000000000000
+8014hex  0000000000000000
+8015hex  0000000000000000
