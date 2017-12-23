@@ -321,3 +321,30 @@ run -all
 # Write Memory Dump File: from address 8000h size 00512 words
 #     74: SLEEP          
 add wave -position end  /cpu_tb/memory_inst/memory_impl_inst/MemoryBehavior/memo
+restart -f
+run 10000ns
+# GetModuleFileName: 找不到指定的模块。
+# 
+# 
+# 
+#  Assembling 0124 lines complete, code & data size 00097 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: MOVE $a, $b    
+#      5: MOVE $a, $b    
+#      6: LOADI $a, imm  
+#      8: LOADI $a, imm  
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
+#     11: COMP $a, $b    
+#     12: JUMPZ $a       
+#     13: INC $a         
+#     14: INC $a         
+#     15: JUMP $a        
+#     10: LOAD $a, $b    
