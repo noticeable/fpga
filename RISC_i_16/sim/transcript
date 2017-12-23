@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+vsim work.alu
+# vsim work.alu 
+# Start time: 03:05:09 on Dec 23,2017
+=======
 # vsim cpu_tb -gfile_base_g=gcd 
 # Start time: 23:22:44 on Dec 22,2017
 # Loading std.standard
@@ -509,6 +514,7 @@ vsim work.alu
 # Errors: 0, Warnings: 1
 # vsim work.alu 
 # Start time: 23:40:11 on Dec 22,2017
+>>>>>>> master
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -517,6 +523,13 @@ vsim work.alu
 # Loading ieee.numeric_std(body)
 # Loading work.risc_i_16_pack
 # Loading work.alu(rtl)
+<<<<<<< HEAD
+run 1000ns
+run 1000ns
+run -all
+# End time: 03:12:07 on Dec 23,2017, Elapsed time: 0:06:58
+# Errors: 0, Warnings: 0
+=======
 add wave -position end  sim:/alu/add_cout
 add wave -position end  sim:/alu/side_a_i
 add wave -position end  sim:/alu/side_b_i
@@ -743,3 +756,4 @@ run
 # 
 # End time: 00:01:51 on Dec 23,2017, Elapsed time: 0:03:25
 # Errors: 2, Warnings: 1
+>>>>>>> master

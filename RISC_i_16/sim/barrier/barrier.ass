@@ -1,0 +1,117 @@
+;register assignment
+;
+;
+;r3 r4		address for jump
+;r7		counter
+
+equ prog_start, 0000h ;start address of program rom
+equ data_start, 8000h :start address of data ram
+equ mem_dump_addr, 0ffffh
+
+macro write_mem_dump
+
+	loadi r6, mem_dump_addr
+	store r4, r6
+
+endm
+
+org data_start
+in1:	db 65
+	db 66
+	db 67
+	db 68
+	db 69
+	db 70
+	db 71
+	db 72
+	db 0
+in2:	db 4
+res:	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+
+c_i:	db 0
+c_j:	db 0
+c_m:	db 0
+len:	db 0
+
+org prog_start
+
+	loadi r0, 0		;zero is an important number
+
+	loadi r5, in1		;first data address of input
+
+	move r2, r0		;r2='\0'
+	move r7, r0		;r7=0 init counter
+	loadi r3, next		;load the address of next
+	loadi r6, strlen	;load the address of strlen
+	
+strlen:
+	load r1,r5		;load the first data of in1  => r1
+	comp r1, r2		;if is null
+	jumpz r3		
+	inc r5
+	inc r7
+	jump r6		
+
+next: 				;result is in r7
+	loadi r1, len
+	store r7, r1		;store r1 to len
+
+	loadi r6, c_j
+	load r2, r6		;r2=j
+	loadi r6, c_m
+	load r5, c_m		;r5=m
+	loadi r6, c_i
+	load r1, r6		;r1=i
+
+	loadi r3, in1		;str
+	loadi r4, res		;out
+
+while1:				;r1=i r2=j r3=[in1] r4=[res] r5=m r7=len
+	sub r7, r2
+	loadi r6, out_while1
+	jumpc r6		;while(j<len)
+	loadi r5, 0
+	
+while2:
+	sub r7, r5
+	loadi r6, out_while2
+	jumpc r6		;while(m<len)
+	
+	move r0, r1
+	add r0, r5		;m+i
+	add r0, r3		;r0=&str[m+i]
+	load r6, r0		;r6=str[m+i]
+	
+	loadi r0, 0
+	add r0, r2
+	add r0, r4		;r0=&out[j]
+	store r6, r0		;out[j]=str[m+i]	
+
+	inc r2			;j++
+	
+	loadi r6, in2
+	load r0, r6		;r0=n
+	add r5, r0		;m=m+n
+
+	loadi r6, while2
+	jump r6			
+				;}
+
+out_while2:
+	inc r1			;i++
+	
+	loadi r6, while1
+	jump r6			;}
+
+
+out_while1:
+	loadi r4, data_start
+	write_mem_dump
+	sleep	
