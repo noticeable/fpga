@@ -1,6 +1,520 @@
+<<<<<<< HEAD
 vsim work.alu
 # vsim work.alu 
 # Start time: 03:05:09 on Dec 23,2017
+=======
+# vsim cpu_tb -gfile_base_g=gcd 
+# Start time: 23:22:44 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu_tb(beh)
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mem_pack(body)
+# Loading work.memory(beh)
+# Loading work.memory_impl(memory_arch)
+vsim work.cpu_tb -gfile_base_g=gcd
+# End time: 23:24:30 on Dec 22,2017, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 0
+# vsim work.cpu_tb -gfile_base_g=gcd 
+# Start time: 23:24:30 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu_tb(beh)
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mem_pack(body)
+# Loading work.memory(beh)
+# Loading work.memory_impl(memory_arch)
+run
+# 
+#  Assembling 0061 lines complete, code & data size 00035 words
+#  65535: NOP            
+run 100
+run 10000
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: LOAD $a, $b    
+#      5: LOADI $a, imm  
+#      7: LOAD $a, $b    
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+run 10000000
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     23: LOADI $a, imm  
+#     25: STORE $a, $b   
+#     26: LOADI $a, imm  
+#     28: LOADI $a, imm  
+#     30: STORE $a, $b   
+# Write Memory Dump File: from address 8000h size 00512 words
+#     31: SLEEP          
+restart -f
+run -all
+# 
+#  Assembling 0061 lines complete, code & data size 00035 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: LOAD $a, $b    
+#      5: LOADI $a, imm  
+#      7: LOAD $a, $b    
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     23: LOADI $a, imm  
+#     25: STORE $a, $b   
+#     26: LOADI $a, imm  
+#     28: LOADI $a, imm  
+#     30: STORE $a, $b   
+# Write Memory Dump File: from address 8000h size 00512 words
+#     31: SLEEP          
+clear
+# [H[J
+run -all
+run -all
+restart -f
+run -all
+# 
+#  Assembling 0061 lines complete, code & data size 00035 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: LOAD $a, $b    
+#      5: LOADI $a, imm  
+#      7: LOAD $a, $b    
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     23: LOADI $a, imm  
+#     25: STORE $a, $b   
+#     26: LOADI $a, imm  
+#     28: LOADI $a, imm  
+#     30: STORE $a, $b   
+# Write Memory Dump File: from address 8000h size 00512 words
+#     31: SLEEP          
+restart -f
+run -all
+# 
+#  Assembling 0061 lines complete, code & data size 00035 words
+#  65535: NOP            
+#      0: LOADI $a, imm  
+#      2: LOADI $a, imm  
+#      4: LOAD $a, $b    
+#      5: LOADI $a, imm  
+#      7: LOAD $a, $b    
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     19: SUB $a, $b     
+#     20: LOADI $a, imm  
+#     22: JUMP $a        
+#      8: COMP $a, $b    
+#      9: LOADI $a, imm  
+#     11: JUMPC $a       
+#     12: MOVE $a, $b    
+#     13: MOVE $a, $b    
+#     14: MOVE $a, $b    
+#     15: COMP $a, $b    
+#     16: LOADI $a, imm  
+#     18: JUMPZ $a       
+#     23: LOADI $a, imm  
+#     25: STORE $a, $b   
+#     26: LOADI $a, imm  
+#     28: LOADI $a, imm  
+#     30: STORE $a, $b   
+# Write Memory Dump File: from address 8000h size 00512 words
+#     31: SLEEP          
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/cpu_tb/clk
+vsim work.alu
+# End time: 23:40:11 on Dec 22,2017, Elapsed time: 0:15:41
+# Errors: 0, Warnings: 1
+# vsim work.alu 
+# Start time: 23:40:11 on Dec 22,2017
+>>>>>>> master
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -9,8 +523,237 @@ vsim work.alu
 # Loading ieee.numeric_std(body)
 # Loading work.risc_i_16_pack
 # Loading work.alu(rtl)
+<<<<<<< HEAD
 run 1000ns
 run 1000ns
 run -all
 # End time: 03:12:07 on Dec 23,2017, Elapsed time: 0:06:58
 # Errors: 0, Warnings: 0
+=======
+add wave -position end  sim:/alu/add_cout
+add wave -position end  sim:/alu/side_a_i
+add wave -position end  sim:/alu/side_b_i
+add wave -position end  sim:/alu/carry_i
+add wave -position end  sim:/alu/alu_func_i
+add wave -position end  sim:/alu/result_o
+run -all
+restart -f
+vsim work.cpu(rtl)
+# End time: 23:42:38 on Dec 22,2017, Elapsed time: 0:02:27
+# Errors: 0, Warnings: 0
+# vsim work.cpu(rtl) 
+# Start time: 23:42:38 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+vsim work.control
+# End time: 23:43:03 on Dec 22,2017, Elapsed time: 0:00:25
+# Errors: 0, Warnings: 0
+# vsim work.control 
+# Start time: 23:43:04 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.control(rtl)
+add wave -position end  sim:/control/clk_i
+run -all
+run
+run
+run
+run
+run
+run
+run -all
+vsim work.cpu
+# End time: 23:44:57 on Dec 22,2017, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 0
+# vsim work.cpu 
+# Start time: 23:44:57 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+vsim work.control
+# End time: 23:45:01 on Dec 22,2017, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# vsim work.control 
+# Start time: 23:45:01 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.control(rtl)
+add wave -position end  sim:/control/clk_i
+add wave -position end  sim:/control/cycle
+run
+run
+run
+run
+run -all
+run -all
+run -all
+run
+run
+step -current
+# ** Error: (vsim-12081) The specified scope, sim:/control, is not a process or thread.
+# 
+step
+# Nothing left to do.
+vsim work.control
+# End time: 23:46:30 on Dec 22,2017, Elapsed time: 0:01:29
+# Errors: 1, Warnings: 0
+# vsim work.control 
+# Start time: 23:46:30 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.control(rtl)
+vsim work.cpu
+# End time: 23:46:35 on Dec 22,2017, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim work.cpu 
+# Start time: 23:46:35 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+add wave -position end  sim:/cpu/clk_i
+add wave -position end  sim:/cpu/clk_en_pc
+add wave -position end  sim:/cpu/clk_en_reg_file
+add wave -position end  sim:/cpu/clk_en_op_code
+run
+run
+run
+vsim work.cpu_tb
+# End time: 23:48:01 on Dec 22,2017, Elapsed time: 0:01:26
+# Errors: 0, Warnings: 0
+# vsim work.cpu_tb 
+# Start time: 23:48:01 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu_tb(beh)
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mem_pack(body)
+# Loading work.memory(beh)
+# Loading work.memory_impl(memory_arch)
+add wave -position end  sim:/cpu_tb/clk
+run
+# ** Warning: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /cpu_tb/memory_inst/memory_impl_inst
+# ** Fatal: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /cpu_tb/memory_inst/memory_impl_inst/MemoryBehavior File: ../src/memory.vhd
+# Fatal error in Process MemoryBehavior at ../src/memory.vhd line 1187
+# 
+# HDL call sequence:
+# Stopped at ../src/memory.vhd 1187 Subprogram GetNextChar
+# called from  ../src/memory.vhd 2294 Subprogram ReadNewSym
+# called from  ../src/memory.vhd 2336 Subprogram InitMemory
+# called from  ../src/memory.vhd 2538 Process MemoryBehavior
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at ../src/memory.vhd 1187 Subprogram GetNextChar
+# called from  ../src/memory.vhd 2294 Subprogram ReadNewSym
+# called from  ../src/memory.vhd 2336 Subprogram InitMemory
+# called from  ../src/memory.vhd 2538 Process MemoryBehavior
+# 
+run -all
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at ../src/memory.vhd 1187 Subprogram GetNextChar
+# called from  ../src/memory.vhd 2294 Subprogram ReadNewSym
+# called from  ../src/memory.vhd 2336 Subprogram InitMemory
+# called from  ../src/memory.vhd 2538 Process MemoryBehavior
+# 
+vsim work.cpu_tb
+# End time: 23:58:25 on Dec 22,2017, Elapsed time: 0:10:24
+# Errors: 4, Warnings: 1
+# vsim work.cpu_tb 
+# Start time: 23:58:26 on Dec 22,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.risc_i_16_pack
+# Loading work.cpu_tb(beh)
+# Loading work.cpu(rtl)
+# Loading work.datapath(rtl)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(rtl)
+# Loading work.reg_file(rtl)
+# Loading work.control(rtl)
+# Loading work.sync_reset(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mem_pack(body)
+# Loading work.memory(beh)
+# Loading work.memory_impl(memory_arch)
+add wave -position insertpoint  \
+sim:/cpu_tb/res
+run
+# ** Warning: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /cpu_tb/memory_inst/memory_impl_inst
+# ** Fatal: (vsim-7) Failed to open VHDL file "main.ass" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /cpu_tb/memory_inst/memory_impl_inst/MemoryBehavior File: ../src/memory.vhd
+# Fatal error in Process MemoryBehavior at ../src/memory.vhd line 1187
+# 
+# HDL call sequence:
+# Stopped at ../src/memory.vhd 1187 Subprogram GetNextChar
+# called from  ../src/memory.vhd 2294 Subprogram ReadNewSym
+# called from  ../src/memory.vhd 2336 Subprogram InitMemory
+# called from  ../src/memory.vhd 2538 Process MemoryBehavior
+# 
+# End time: 00:01:51 on Dec 23,2017, Elapsed time: 0:03:25
+# Errors: 2, Warnings: 1
+>>>>>>> master
