@@ -741,3 +741,5 @@ run
 # called from  ../src/memory.vhd 2336 Subprogram InitMemory
 # called from  ../src/memory.vhd 2538 Process MemoryBehavior
 # 
+# End time: 00:01:51 on Dec 23,2017, Elapsed time: 0:03:25
+# Errors: 2, Warnings: 1
